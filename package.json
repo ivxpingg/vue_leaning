@@ -1,0 +1,23 @@
+{
+  "name": "vuess",
+  "version": "1.0.0",
+  "description": "vue学习",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "vue": "^2.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivxpingg/vue_leaning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivxpingg/vue_leaning/issues"
+  },
+  "homepage": "https://github.com/ivxpingg/vue_leaning#readme"
+}

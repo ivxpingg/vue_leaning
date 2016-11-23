@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>条件与循环</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+
+  </head>
+  <body>
+    <div id="app1">
+      <span v-if="seen">你现在可以看到我, 5秒后我会消失</span>
+    </div>
+
+    <div id="app2">
+       <ol>
+          <li v-for="todo in todos">{{ todo.text }}</li>
+       </ol>
+    </div>
+
+     <script type="text/javascript">
+         var app1 = new Vue({
+           el: '#app1',
+           data: {
+             seen: true,
+           }
+         });
+
+         setTimeout(function(){
+           app1.seen = false;
+         },5000);
+
+
+         var app2 = new Vue({
+           el: '#app2',
+           data: {
+             todos: [{
+               text: 'javascript'
+             },{
+               text: 'C#'
+             },{
+               text: 'GO'
+             }]
+           }
+         });
+
+         app2.todos.push({text: 'PHP'});
+     </script>
+  </body>
+</html>

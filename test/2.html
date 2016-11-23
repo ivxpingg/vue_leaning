@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>声明式渲染</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+
+  </head>
+  <body>
+    <div id="app-1">{{ message }}</div>
+
+    <div id="app-2">
+       <span v-bind:title="message">鼠标经过几秒钟可以看到我动态绑定的标题title</span>
+    </div>
+
+     <script type="text/javascript">
+         var app1 = new Vue({
+           el: '#app-1',
+           data: {
+             message: 'Hello Vue!'
+           }
+         });
+
+
+         var app2 = new Vue({
+           el: '#app-2',
+           data: {
+             message: '你在' + new Date + '加载了这个页面'
+           }
+         });
+
+         setTimeout(function(){
+           app2.message = '我在5秒后被更新了';
+         },5000);
+     </script>
+  </body>
+</html>
