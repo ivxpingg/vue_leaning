@@ -7,14 +7,29 @@
 
   </head>
   <body>
-    <ul>
-      <todo-item></todo-item>
-    </ul>
+    <div id="app">
+      <ol>
+        <todo-item v-for="item in groceryList" v-bind:todo='item'></todo-item>
+      </ol>
+    </div>
 
      <script type="text/javascript">
          Vue.component('todo-item',{
-           template: '<li>This is a todo</li>'
-         })
+           props: ['todo'],
+           template: '<li>{{todo.text}}</li>'
+         });
+
+         var app = new Vue({
+           el: '#app',
+           data: {
+             groceryList: [
+               {text: 'javascript'},
+               {text: 'c#'},
+               {text: 'GO'}
+             ]
+           }
+         });
+
      </script>
   </body>
 </html>
