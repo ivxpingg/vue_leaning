@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>模板语法-插值</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+
+  </head>
+  <body>
+    <div id="app1">5秒后我的值会改变：{{ message }}</div>
+
+    <div id="app2" v-once>5秒后我的值不用会改变：  {{ message }}</div>
+
+
+    <div id="app3">
+        <div  v-html="message">{{message}}</div>
+        <div>{{message}}</div>
+    </div>
+
+
+     <script type="text/javascript">
+         var app1 = new Vue({
+           el: '#app1',
+           data: {
+             message: '我是文本绑定'
+           }
+         });
+
+         var app2 = new Vue({
+           el: '#app2',
+           data: {
+             message: '一次性插入不改变'
+           }
+         });
+
+         setTimeout(function(){
+            app1.message = "我改变了";
+            app2.message = "我改变了，但是不体现在";
+         },5000);
+
+
+         var app3 = new Vue({
+           el: '#app3',
+           data: {
+             message: '<strong>我是粗体</strong>'
+           }
+         });
+
+     </script>
+  </body>
+</html>

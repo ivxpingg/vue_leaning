@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>模板语法-属性</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+
+  </head>
+  <body>
+    <div id="app1" v-bind:id="id">
+      <button v-bind:disabled="someDynamicCondition">这对布尔值的属性也有效 —— 如果条件被求值为 false 的话该属性会被移除</button>
+    </div>
+
+
+     <script type="text/javascript">
+         var app1 = new Vue({
+           el: '#app1',
+           data: {
+             id: 'js_id',
+             someDynamicCondition: false
+           }
+         });
+
+
+     </script>
+  </body>
+</html>
